@@ -1,0 +1,30 @@
+#+TITLE: CPP Extractor
+#+AUTHOR: RJ Sheperd
+
+** Setup
+
+*** Download Repo
+#+BEGIN_SRC bash
+  git clone https://github.com/rjsheperd/cpp-extractor.git
+#+END_SRC
+
+*** Install Requirements
+
+With [[https://docs.conda.io/en/latest/miniconda.html][conda]]:
+#+BEGIN_SRC bash
+  conda env create -f environment.yml
+  conda activate
+#+END_SRC
+
+With pip:
+#+BEGIN_SRC bash
+  pip install -r requirements.txt
+#+END_SRC
+
+** Run
+
+#+BEGIN_SRC bash
+./main.py test.h
+#+END_SRC
+
+

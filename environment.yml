@@ -19,4 +19,5 @@ dependencies:
   - wheel=0.40.0
   - xz=5.2.6
   - pip:
+      - castxml==0.4.3
       - pygccxml==2.2.1

@@ -1,1 +1,2 @@
+castxml==0.4.3
 pygccxml==2.2.1
