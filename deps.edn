@@ -1,0 +1,5 @@
+{:paths     ["src"]
+ :mvn/repos {"apache"  {:url "https://repo.maven.apache.org/maven2/"}
+             "gitlab"  {:url "https://gitlab.com/api/v4/projects/375779/packages/maven"}
+             "jitpack" {:url "https://www.jitpack.io"}}
+ :deps      {be.ugent.rml/rmlmapper {:mvn/version "6.2.0"}}}
