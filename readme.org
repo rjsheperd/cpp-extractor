@@ -36,3 +36,10 @@ https://nixos.org/download.html
 #+BEGIN_SRC bash
 ./castxml.py behave/src/behave/behaveRun.h
 #+END_SRC
+
+** XLS Translation
+
+#+BEGIN_SRC bash
+  npm i -g xslt3
+  xslt3 -xsl:behave-xform.xsl -s:behave.xml -o:fns.xml
+#+END_SRC
