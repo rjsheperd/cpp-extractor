@@ -6,25 +6,33 @@
 *** Download Repo
 #+BEGIN_SRC bash
   git clone https://github.com/rjsheperd/cpp-extractor.git
+  git submodule init --update --recursive
 #+END_SRC
 
 *** Install Requirements
 
-With [[https://docs.conda.io/en/latest/miniconda.html][conda]]:
+**** With NIX
+https://nixos.org/download.html
+
+**** With [[https://docs.conda.io/en/latest/miniconda.html][Conda]]:
 #+BEGIN_SRC bash
   conda env create -f environment.yml
   conda activate
 #+END_SRC
 
-With pip:
+**** With pip:
 #+BEGIN_SRC bash
   pip install -r requirements.txt
 #+END_SRC
 
 ** Run
 
+**** With NIX
 #+BEGIN_SRC bash
-./main.py test.h
+./castxml.sh behave/src/behave/behaveRun.h
 #+END_SRC
 
-
+**** With Conda/pip
+#+BEGIN_SRC bash
+./castxml.py behave/src/behave/behaveRun.h
+#+END_SRC
