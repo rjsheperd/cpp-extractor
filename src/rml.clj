@@ -7,7 +7,7 @@
    [be.ugent.rml.store QuadStore QuadStoreFactory RDF4JStore]
    [be.ugent.rml.term NamedNode]))
 
-(def mapping-file (Utils/getFile "mapping.ttl"))
+(def mapping-file (io/file (io/resource "mapping.ttl")))
 
 (def mapping-stream (io/input-stream mapping-file))
 
@@ -15,11 +15,14 @@
 
 (def factory (RecordsFactory. (.getParent mapping-file)))
 
-(def function-agent (AgentFactory/createFromFnO "fno/functions_idlab.ttl" "fno/functions_idlab_test_classes_java_mapping.ttl"))
+#_(def function-agent (AgentFactory/createFromFnO "fno/functions_idlab.ttl" "fno/functions_idlab_test_classes_java_mapping.ttl"))
 
 (def output-store (RDF4JStore.))
 
-(def executor (Executor. rml-store factory output-store (utils/getBaseDirectiveTurtle mapping-stream) function-agent))
+(def executor (Executor. rml-store factory output-store (Utils/getBaseDirectiveTurtle mapping-stream)))
 
-(def result (.get (.execute executor (NamedNode. "rmlmapper://default.store"))))
+(def result (.get (.execute executor nil) (NamedNode. "rmlmapper://default.store")))
+
+(with-open [w (clojure.java.io/writer "output.ttl" :append true)]
+  (.write result w "nquads"))
 
