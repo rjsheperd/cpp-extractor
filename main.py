@@ -71,6 +71,9 @@ def printer(decl):
 
 def main(args):
     filename = args[0]
+    cfg = xml_generator_config
+    print(cfg.compiler, cfg.compiler_path)
+    xml_generator_config.cflags = "-std=c++14"
     decls = parser.parse([filename], xml_generator_config)
 
     # Get access to the global namespace
