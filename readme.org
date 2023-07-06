@@ -48,9 +48,14 @@ To transform this using ~xform.xslt~, you can use [[https://www.npmjs.com/packag
 #+BEGIN_SRC bash
   npm install -g xslt3
 
-  xslt3 -xsl:xform.xsl -s:behave.xml -o:fns4.xml
+  xslt3 -xsl:xform.xsl -s:behave.xml -o:behave-simple.xml
 #+END_SRC
 
 ** Convert XML to [[https://fno.io/][Function Ontology]]
 
-TBD
+TBD (Probably using [[https://rml.io/yarrrml/tutorial/getting-started/][YARRRML]])
+
+*** Adding Docs
+
+- [[https://www.doxygen.nl/manual/output.html][Doxygen XML Output]]
+- [[https://www.doxygen.nl/manual/commands.html][Doxygen Commands]]
