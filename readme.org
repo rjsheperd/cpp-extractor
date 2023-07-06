@@ -36,3 +36,21 @@ https://nixos.org/download.html
 #+BEGIN_SRC bash
 ./castxml.py behave/src/behave/behaveRun.h
 #+END_SRC
+
+** Convert CastXML to simple XML format
+
+CastXML makes heavy use of references (e.g. ~<Class id="_9" name="MyClass" members="_12 _34" ...>~),
+which can make it difficult to quickly tease out the classes, methods
+and arguments.
+
+To transform this using ~xform.xslt~, you can use [[https://www.npmjs.com/package/xslt3][xslt3]] (via NPM):
+
+#+BEGIN_SRC bash
+  npm install -g xslt3
+
+  xslt3 -xsl:xform.xsl -s:behave.xml -o:fns4.xml
+#+END_SRC
+
+** Convert XML to [[https://fno.io/][Function Ontology]]
+
+TBD
