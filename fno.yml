@@ -1,0 +1,11 @@
+prefixes:
+  fs:  http://fs.usda.gov/behave#
+  fno: http://example.org/ontologies/fno#
+
+mappings:
+  class:
+    sources:
+      - [behave-simple.xml~xpath, /Classes/Class]
+    s: fs:$(name)
+    po:
+      - [a, fno:Class]

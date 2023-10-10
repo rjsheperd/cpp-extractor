@@ -1,3 +1,6 @@
+#ifndef _ADDRESSBOOK_H_INCLUDED_
+#define _ADDRESSBOOK_H_INCLUDED_
+
 namespace AddressBook {
 
   struct Point {
@@ -13,7 +16,7 @@ namespace AddressBook {
 
   class Address {
   public:
-    Address(char* street, char* city, Point p);
+    Address(char* street, char* city, LocationType l, Point p);
     ~Address();
 
     void setStreet(char* street);
@@ -22,13 +25,19 @@ namespace AddressBook {
     void setCity(char* city);
     char* getCity();
 
+    void setLocationType(LocationType l);
+    LocationType getLocationType();
+
     void setPoint(Point p);
     Point getPoint();
 
   private:
-    char* _street;
-    char* _city;
-    Point p;
+    char*        _street;
+    char*        _city;
+    LocationType _l;
+    Point        _p;
   };
 
 }
+
+#endif
